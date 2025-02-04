@@ -1,8 +1,33 @@
-# React + Vite
+# 🌐 Portafolio de Ian Camps
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es mi portafolio personal, creado con **React**, **Vite** y **Tailwind CSS**.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologías usadas:
+- **React**
+- **Tailwind CSS**
+- **Vite**
+- **Framer Motion** (para animaciones)
+- **EmailJS** (para el formulario de contacto)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📥 Instalación y ejecución:
+```bash
+git clone https://github.com/iancamps90/portfolio.git
+cd portfolio
+npm install
+npm run dev
+
+🌍 Despliegue en GitHub Pages:
+
+npm run build
+npm run deploy
+
+📷 Capturas de pantalla:
+
+![Portafolio](public/img/screenshot.png)
+
+
+📫 Contacto:
+
+    Email: iancamps90@gmail.com
+    GitHub: github.com/iancamps90
+    LinkedIn: linkedin.com/in/ian-camps
