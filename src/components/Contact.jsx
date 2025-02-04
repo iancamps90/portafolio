@@ -5,10 +5,16 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
+
+
 function Contact() {
     const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-    const [successMessage, setSuccessMessage] = useState("");
-    const [errorMessage, setErrorMessage] = useState("");
+
+    useEffect(() => {
+        emailjs.init("l-W8xiK-ARvbLCp54");  // Agrega tu clave pública de EmailJS aquí
+    }, []);
+
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -33,6 +39,7 @@ function Contact() {
                 setFormData({ name: "", email: "", message: "" });
             })
             .catch(() => {
+                console.error("Error al enviar el mensaje:", error);
                 toast.error("❌ Hubo un error al enviar el mensaje.");
             });
     };
