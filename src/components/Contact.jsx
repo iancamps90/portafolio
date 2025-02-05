@@ -1,20 +1,19 @@
 // src/components/Contact.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-
-
-
 function Contact() {
+    // Definir los estados correctamente
     const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+    const [successMessage, setSuccessMessage] = useState(""); // AÑADIDO
+    const [errorMessage, setErrorMessage] = useState(""); // AÑADIDO
 
     useEffect(() => {
-        emailjs.init("l-W8xiK-ARvbLCp54");  // Agrega tu clave pública de EmailJS aquí
+        emailjs.init("l-W8xiK-ARvbLCp54"); // Agrega tu clave pública de EmailJS aquí
     }, []);
-
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,24 +21,35 @@ function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+
         if (!formData.name || !formData.email || !formData.message) {
+            setErrorMessage("❌ Todos los campos son obligatorios.");
             toast.error("❌ Todos los campos son obligatorios.");
             return;
         }
 
+        const templateParams = {
+            from_name: formData.name,
+            from_email: formData.email,
+            message: formData.message
+        };
+
         emailjs.send(
-            "service_3fxieuv",
-            "template_2he9v59",
-            formData,
-            "l-W8xiK-ARvbLCp54"
+            "service_werf5oo",  // Reemplaza con tu Service ID
+            "template_l9ynfpt", // Reemplaza con tu Template ID
+            templateParams,
+            "l-W8xiK-ARvbLCp54" // Reemplaza con tu Public Key
         )
-            .then(() => {
+            .then((response) => {
+                console.log("Éxito:", response);
+                setSuccessMessage("✅ ¡Mensaje enviado con éxito!");
+                setErrorMessage(""); // Resetea error en caso de que haya habido uno
                 toast.success("✅ ¡Mensaje enviado con éxito!");
                 setFormData({ name: "", email: "", message: "" });
             })
-            .catch(() => {
+            .catch((error) => {
                 console.error("Error al enviar el mensaje:", error);
+                setErrorMessage("❌ Hubo un error al enviar el mensaje.");
                 toast.error("❌ Hubo un error al enviar el mensaje.");
             });
     };
@@ -107,9 +117,9 @@ function Contact() {
 
             {/* ToastContainer para mostrar notificaciones */}
             <ToastContainer position="bottom-right" autoClose={3000} />
-
         </section>
     );
 }
 
 export default Contact;
+
