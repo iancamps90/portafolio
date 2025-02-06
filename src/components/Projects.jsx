@@ -37,12 +37,12 @@ const projectsData = [
         codeLink: "https://github.com/iancamps90/planificador-dietas"
     },
     {
-        title: "To-Do List",
-        description: "Aplicación lista de tareas con React/vite, JavaScript, CSS, HTML.",
+        title: "Ecommerce & To-Do List",
+        description: "Aplicación E-commerce y lista de tareas con React/vite, JavaScript, CSS, HTML.",
         image: "img/tareas.png",
         technologies: ["React, HTML", "CSS", "JavaScript"],
-        demoLink: "https://iancamps90.github.io/My-tasks-proyect/",
-        codeLink: "https://github.com/iancamps90/My-tasks-proyect"
+        demoLink: "https://iancamps90.github.io/To-Do/",
+        codeLink: "https://github.com/iancamps90/To-Do"
     },
     {
         title: "Portfolio certificaciones", 
