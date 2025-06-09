@@ -105,15 +105,7 @@ function Contact() {
                 {errorMessage && <p className="text-red-500 mt-3">{errorMessage}</p>}
             </form>
 
-            {/* Redes sociales */}
-            <div className="mt-6 text-center">
-                <p className="mb-2">También puedes contactarme en:</p>
-                <div className="flex justify-center space-x-4">
-                    <a href="mailto:iancamps90@gmail.com" className="text-2xl text-gray-700 hover:text-red-500"><FaEnvelope /></a>
-                    <a href="https://github.com/iancamps90" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-gray-700"><FaGithub /></a>
-                    <a href="https://www.linkedin.com/in/ian-camps-gomez-1a60a9126" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-blue-700"><FaLinkedin /></a>
-                </div>
-            </div>
+            
 
             {/* ToastContainer para mostrar notificaciones */}
             <ToastContainer position="bottom-right" autoClose={3000} />

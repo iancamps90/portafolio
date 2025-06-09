@@ -39,8 +39,8 @@ function Hero() {
                 </a>
 
                 <a
-                    href={`${import.meta.env.BASE_URL}cv.pdf`}
-                    download="IanCamps_CV.pdf"
+                    href={`${import.meta.env.BASE_URL}IAN_CAMPS_2025.pdf`}
+                    download="IAN_CAMPS_2025.pdf"
                     className="bg-green-600 text-white px-5 py-2 rounded-lg hover:bg-green-700 transition-all"
                 >
                     📄 Descargar CV

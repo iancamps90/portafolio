@@ -5,6 +5,30 @@ import React, { useState } from "react";
 // Lista de proyectos
 const projectsData = [
     {
+        title: "CloudGuardian – Plataforma de Ciberseguridad",
+        description: "Aplicación Full Stack desplegable con backend en Django que actúa como firewall inteligente. Detecta y bloquea IPs maliciosas, protege rutas sensibles, gestiona subdominios mediante proxy reverso con Caddy y se despliega en servidores cloud con Docker, systemd y dominio propio.",
+        image: "img/cloudguardian.png", // ➕ Súbela a public/img/
+        technologies: ["Django", "Python", "Docker", "Gunicorn", "Caddy", "PostgreSQL"],
+        demoLink: "#", // No tiene demo pública aún
+        codeLink: "https://github.com/iancamps90/CloudGuardian"
+    },      
+    {
+        title: "Planify – Agenda Digital Multimódulo (TFG)",
+        description: "Aplicación Full Stack contenedorizada que gestiona hábitos, tareas compartidas, finanzas personales, diario, objetivos y sincronización con Google Calendar. Desarrollada con arquitectura modular y despliegue en Docker (frontend, backend y BBDD).",
+        image: "img/planify.png", // ➕ Súbela a public/img/
+        technologies: ["React", "Vite", "Tailwind", "Django", "Docker", "PostgreSQL"],
+        demoLink: "#", // Añádelo si decides subirla más adelante
+        codeLink: "https://github.com/iancamps90/Planify"
+    },      
+    {
+        title: "Web App Interactiva – Parque Prehistoria",
+        description: "Aplicación frontend creada para una experiencia educativa en museos/parques. Guiada por avatares, integra códigos QR, juegos y curiosidades usando Genially en tiempo real. Desarrollada con React y CSS puro.",
+        image: "img/prehistoria.png", // ➕ Súbela a public/img/
+        technologies: ["React", "CSS", "JavaScript"],
+        demoLink: "https://iancamps90.github.io/WebApp-Prehistoria", // Puedes subirla a GitHub Pages si no lo has hecho ya
+        codeLink: "https://github.com/iancamps90/WebApp-Prehistoria"
+    },
+    {
         title: "Proyecto API Pokemon", // FALTA RESPONSIVE
         description: "Aplicación web desarrollada con React/vite, JavaScript, CSS, HTML.", 
         image: "img/pokemon2.png", 

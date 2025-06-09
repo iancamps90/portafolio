@@ -35,19 +35,31 @@ function About() {
                 {/* Descripción */}
                 <div className="text-center md:text-left">
                     <p className="mb-4 text-lg">
-                        Soy un <span className="font-semibold text-blue-600 dark:text-blue-400">desarrollador web Full Stack en formación</span>,
-                        apasionado por la creación de aplicaciones funcionales, innovadoras y visualmente atractivas.
-                        Actualmente estoy cursando un FP de Desarrollo de Aplicaciones Web y
-                        complementando mi aprendizaje con proyectos prácticos.
+                        Soy <span className="font-semibold text-blue-600 dark:text-blue-400">Ian Camps</span>, desarrollador web Full Stack con experiencia práctica en proyectos reales durante mis prácticas de FP de Desarrollo de Aplicaciones Web. Me apasiona crear soluciones modernas, funcionales y seguras, con enfoque en rendimiento, experiencia de usuario y despliegue profesional.
                     </p>
 
                     <p className="mb-4 text-lg">
-                        Me motiva resolver desafíos tecnológicos a través de soluciones escalables
-                        y optimizadas para mejorar la experiencia de los usuarios.
-                        Mi experiencia previa como vigilante me ha dotado de habilidades clave
-                        como la <span className="font-semibold">organización, resolución de problemas</span>
-                        y <span className="font-semibold">atención al detalle</span>.
+                        He liderado el desarrollo de <strong>CloudGuardian</strong>, una plataforma de ciberseguridad desplegada en un servidor cloud con <strong>Docker, Gunicorn, Caddy, systemd</strong> y dominio propio. El sistema actúa como firewall inteligente, protege rutas sensibles, bloquea IPs maliciosas y realiza proxy seguro hacia subdominios protegidos.
                     </p>
+
+                    <p className="mb-4 text-lg">
+                        Como TFG he desarrollado <strong>Planify</strong>, una agenda virtual 360º con gestión de hábitos, finanzas, tareas compartidas, sincronización con Google Calendar y módulos avanzados de productividad. La aplicación está construida como solución contenedorizada con <strong>Docker Compose (frontend, backend y base de datos)</strong> y preparada para entornos productivos.
+                    </p>
+
+                    <p className="mb-4 text-lg">
+                        Además, he participado en la creación de una <strong>web app educativa para un parque de la prehistoria</strong>, desarrollada con React y CSS puro. La aplicación guía al usuario mediante un recorrido interactivo con paradas, códigos QR y actividades de Genially integradas en tiempo real.
+                    </p>
+
+                    <p className="mb-4 text-lg">
+                        Domino tecnologías como <strong>React, Vite, Tailwind, Django, PostgreSQL, Web Scraping con Selenium y BeautifulSoup</strong>, así como herramientas de trabajo profesional como <strong>Docker, GitHub Actions, Trello, Figma, Miro</strong> y despliegues en servidores Linux con automatización desde Git.
+                    </p>
+
+                    <p className="mb-4 text-lg">
+                        Me destaco por mi <strong>liderazgo en proyectos, autonomía, capacidad de organización</strong> y compromiso real con el desarrollo profesional. Cada proyecto es una oportunidad para aprender, optimizar y entregar calidad real.
+                    </p>
+
+
+
 
                     {/* Enlaces a GitHub y LinkedIn */}
                     <div className="flex justify-center md:justify-start gap-4 mt-4">
