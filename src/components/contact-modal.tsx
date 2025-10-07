@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaTimes, FaEnvelope, FaUser, FaComment } from 'react-icons/fa'
-import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser'
 
 interface ContactModalProps {
   isOpen: boolean
@@ -55,17 +55,25 @@ ${formData.message}
 Este mensaje fue enviado automáticamente desde el formulario de contacto de iancamps.dev
       `.trim()
 
-      await emailjs.send(
+      // Inicializar EmailJS
+      emailjs.init(publicKey)
+
+      const result = await emailjs.send(
         serviceId,
         templateId,
         {
           from_name: formData.name,
           from_email: formData.email,
+          to_email: 'ian@iancamps.dev',
           subject: subject,
-          message: fullMessage
-        },
-        publicKey
+          message: fullMessage,
+          company: formData.company || 'No especificada',
+          project_type: formData.project || 'No especificado',
+          budget: formData.budget || 'No especificado'
+        }
       )
+
+      console.log('Email sent successfully:', result)
 
       setIsSubmitted(true)
       setTimeout(() => {

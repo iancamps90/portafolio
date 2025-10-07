@@ -18,9 +18,9 @@ export const ContactCTA = () => {
     {
       icon: FaEnvelope,
       title: 'Email',
-      link: 'mailto:contacto@iancamps.dev',
+      link: 'mailto:ian@iancamps.dev',
       color: 'from-purple-500 to-pink-500',
-      description: 'contacto@iancamps.dev'
+      description: 'ian@iancamps.dev'
     },
     {
       icon: FaGithub,

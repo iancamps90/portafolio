@@ -35,10 +35,10 @@ export function AboutHero() {
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary" />
                 <a 
-                  href="mailto:contacto@iancamps.dev"
+                  href="mailto:ian@iancamps.dev"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  contacto@iancamps.dev
+                  ian@iancamps.dev
                 </a>
               </div>
               <div className="flex items-center gap-3">

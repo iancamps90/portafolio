@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Send, Mail, User, MessageSquare } from 'lucide-react'
 import toast from 'react-hot-toast'
-import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser'
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
