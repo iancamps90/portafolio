@@ -94,7 +94,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
-        {/* Google Analytics */}
+        {/* Google Analytics - Updated */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-GJGF5PPX54"
           strategy="afterInteractive"
@@ -106,7 +106,8 @@ export default function RootLayout({
             gtag('js', new Date());
             gtag('config', 'G-GJGF5PPX54', {
               page_title: document.title,
-              page_location: window.location.href
+              page_location: window.location.href,
+              send_page_view: true
             });
           `}
         </Script>
