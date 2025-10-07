@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     siteName: 'Ian Camps Dev',
     images: [
       {
-        url: '/img/iancamps-og.jpg',
+        url: '/img/iancamps-og.svg',
         width: 1200,
         height: 630,
         alt: 'Ian Camps Dev - Desarrollo Web y Automatización Profesional',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title: 'Ian Camps Dev | Desarrollo Web y Automatización Profesional',
     description: 'Desarrollo web Full Stack, automatización de procesos, dashboards con Power BI y consultoría digital. Transformo ideas en soluciones eficientes.',
     creator: '@iancamps90',
-    images: ['/img/iancamps-og.jpg'],
+    images: ['/img/iancamps-og.svg'],
   },
   robots: {
     index: true,
@@ -86,6 +86,12 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        {/* Preconnect hints for performance */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* DNS prefetch for external resources */}
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         {/* Google Analytics */}
@@ -98,7 +104,10 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-GJGF5PPX54');
+            gtag('config', 'G-GJGF5PPX54', {
+              page_title: document.title,
+              page_location: window.location.href
+            });
           `}
         </Script>
         <ThemeProvider
