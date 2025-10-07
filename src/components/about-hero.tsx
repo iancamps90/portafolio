@@ -68,7 +68,9 @@ export function AboutHero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <CVDownload />
               <motion.a
-                href="/certifications"
+                href="https://certificados.iancamps.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium hover:from-purple-700 hover:to-blue-700 transition-all duration-200"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

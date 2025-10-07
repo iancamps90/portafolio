@@ -37,7 +37,7 @@ export default function CertificationsPage() {
             </ul>
             <div className="mt-8">
               <a 
-                href="https://certificaciones.iancamps.dev" 
+                href="https://certificados.iancamps.dev/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
