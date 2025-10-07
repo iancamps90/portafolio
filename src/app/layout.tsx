@@ -15,18 +15,19 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'IanCamps.dev - Desarrollo Web & Automatización para Empresas',
-    template: '%s | IanCamps.dev'
+    default: 'Ian Camps Dev | Desarrollo Web y Automatización Profesional',
+    template: '%s | Ian Camps Dev'
   },
-  description: 'Servicios profesionales de desarrollo web, automatización de procesos y análisis de datos. Soluciones tecnológicas modernas para empresas que buscan eficiencia y crecimiento digital.',
+  description: 'Desarrollo web Full Stack, automatización de procesos, dashboards con Power BI y consultoría digital. Transformo ideas en soluciones eficientes.',
   keywords: [
-    'IanCamps.dev', 'Desarrollo web', 'Automatización', 'Análisis de datos', 
-    'React', 'Django', 'Python', 'Power BI', 'Zapier', 'Desarrollo full-stack',
-    'Servicios web', 'Consultoría tecnológica', 'Empresa desarrollo', 'Freelancer'
+    'desarrollo web', 'typescript', 'next.js', 'django', 'react', 'laravel', 
+    'automatización', 'zapier', 'make', 'power bi', 'n8n', 'freelance', 
+    'valencia', 'programador web', 'Ian Camps', 'desarrollo full-stack',
+    'consultoría digital', 'automatización procesos'
   ],
-  authors: [{ name: 'Ian Camps', url: 'https://iancamps.dev' }],
-  creator: 'Ian Camps',
-  publisher: 'IanCamps.dev',
+  authors: [{ name: 'iancampsdev', url: 'https://iancamps.dev' }],
+  creator: 'iancampsdev',
+  publisher: 'Ian Camps Dev',
   formatDetection: {
     email: false,
     address: false,
@@ -40,22 +41,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'es_ES',
     url: 'https://iancamps.dev',
-    title: 'IanCamps.dev - Desarrollo Web & Automatización para Empresas',
-    description: 'Servicios profesionales de desarrollo web, automatización de procesos y análisis de datos para empresas modernas.',
-    siteName: 'IanCamps.dev',
+    title: 'Ian Camps Dev | Desarrollo Web y Automatización Profesional',
+    description: 'Desarrollo web Full Stack, automatización de procesos, dashboards con Power BI y consultoría digital. Transformo ideas en soluciones eficientes.',
+    siteName: 'Ian Camps Dev',
     images: [
       {
         url: '/img/iancamps-og.jpg',
         width: 1200,
         height: 630,
-        alt: 'IanCamps.dev - Desarrollo Web & Automatización',
+        alt: 'Ian Camps Dev - Desarrollo Web y Automatización Profesional',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IanCamps.dev - Desarrollo Web & Automatización para Empresas',
-    description: 'Servicios profesionales de desarrollo web, automatización de procesos y análisis de datos para empresas modernas.',
+    title: 'Ian Camps Dev | Desarrollo Web y Automatización Profesional',
+    description: 'Desarrollo web Full Stack, automatización de procesos, dashboards con Power BI y consultoría digital. Transformo ideas en soluciones eficientes.',
     creator: '@iancamps90',
     images: ['/img/iancamps-og.jpg'],
   },
@@ -82,6 +83,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         {/* Google Analytics */}
         <Script
