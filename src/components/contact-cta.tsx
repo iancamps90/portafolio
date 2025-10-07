@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaWhatsapp, FaEnvelope, FaGithub, FaLinkedin, FaExternalLinkAlt } from 'react-icons/fa'
-import { ContactModal } from './contact-modal'
+import { ContactModalSimple } from './contact-modal-simple'
 
 export const ContactCTA = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -110,7 +110,7 @@ export const ContactCTA = () => {
       </motion.div>
 
       {/* Modal */}
-      <ContactModal 
+      <ContactModalSimple 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
       />

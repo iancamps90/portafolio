@@ -3,14 +3,13 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaTimes, FaEnvelope, FaUser, FaComment } from 'react-icons/fa'
-import emailjs from '@emailjs/browser'
 
 interface ContactModalProps {
   isOpen: boolean
   onClose: () => void
 }
 
-export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
+export const ContactModalSimple = ({ isOpen, onClose }: ContactModalProps) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -27,11 +26,6 @@ export const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
     setIsSubmitting(true)
 
     try {
-      // Configuración de EmailJS - usando template más simple
-      const serviceId = 'service_werf5oo'
-      const templateId = 'template_contact' // Template más simple
-      const publicKey = 'l-W8xiK-ARvbLCp54'
-
       // Crear el mensaje completo con toda la información
       const fullMessage = `
 Nueva solicitud de presupuesto desde iancamps.dev
@@ -52,22 +46,14 @@ ${formData.message}
 Este mensaje fue enviado automáticamente desde el formulario de contacto de iancamps.dev
       `.trim()
 
-      // Inicializar EmailJS
-      emailjs.init(publicKey)
-
-      const result = await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: fullMessage,
-          to_email: 'ian@iancamps.dev'
-        }
-      )
-
-      console.log('Email sent successfully:', result)
-
+      // Crear mailto link
+      const subject = `Solicitud de presupuesto - ${formData.project || 'Proyecto'} - ${formData.company || 'Sin empresa'}`
+      const body = encodeURIComponent(fullMessage)
+      const mailtoLink = `mailto:ian@iancamps.dev?subject=${encodeURIComponent(subject)}&body=${body}`
+      
+      // Abrir cliente de email
+      window.open(mailtoLink, '_blank')
+      
       setIsSubmitted(true)
       setTimeout(() => {
         onClose()
@@ -82,49 +68,8 @@ Este mensaje fue enviado automáticamente desde el formulario de contacto de ian
         })
       }, 2000)
     } catch (error) {
-      console.error('Error sending email:', error)
-      
-      // Fallback: crear mailto link
-      const subject = `Solicitud de presupuesto - ${formData.project || 'Proyecto'} - ${formData.company || 'Sin empresa'}`
-      const fallbackMessage = `
-Nueva solicitud de presupuesto desde iancamps.dev
-
-INFORMACIÓN DEL CLIENTE:
-• Nombre: ${formData.name}
-• Email: ${formData.email}
-• Empresa: ${formData.company || 'No especificada'}
-
-DETALLES DEL PROYECTO:
-• Tipo de proyecto: ${formData.project || 'No especificado'}
-• Presupuesto aproximado: ${formData.budget || 'No especificado'}
-
-DESCRIPCIÓN:
-${formData.message}
-
----
-Este mensaje fue enviado automáticamente desde el formulario de contacto de iancamps.dev
-      `.trim()
-      
-      const body = encodeURIComponent(fallbackMessage)
-      const mailtoLink = `mailto:ian@iancamps.dev?subject=${encodeURIComponent(subject)}&body=${body}`
-      
-      // Abrir cliente de email
-      window.open(mailtoLink, '_blank')
-      
-      // Mostrar mensaje de éxito de todas formas
-      setIsSubmitted(true)
-      setTimeout(() => {
-        onClose()
-        setIsSubmitted(false)
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          project: '',
-          budget: '',
-          message: ''
-        })
-      }, 2000)
+      console.error('Error:', error)
+      alert('Error al procesar el formulario. Por favor, inténtalo de nuevo.')
     } finally {
       setIsSubmitting(false)
     }
@@ -187,8 +132,8 @@ Este mensaje fue enviado automáticamente desde el formulario de contacto de ian
                 <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <FaEnvelope className="w-8 h-8 text-green-500" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">¡Mensaje enviado!</h3>
-                <p className="text-muted-foreground">Te responderé en menos de 24 horas</p>
+                <h3 className="text-xl font-semibold mb-2">¡Formulario procesado!</h3>
+                <p className="text-muted-foreground">Se abrirá tu cliente de email con el mensaje pre-escrito</p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -295,7 +240,7 @@ Este mensaje fue enviado automáticamente desde el formulario de contacto de ian
                   whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                   whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                 >
-                  {isSubmitting ? 'Enviando...' : 'Enviar solicitud'}
+                  {isSubmitting ? 'Procesando...' : 'Enviar solicitud'}
                 </motion.button>
               </form>
             )}
