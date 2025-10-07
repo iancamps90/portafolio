@@ -391,8 +391,12 @@ export const DashboardUltra = () => {
         {icons.map((iconData, index) => (
           <FloatingIcon 
             key={index} 
-            {...iconData} 
+            icon={iconData.icon}
             position={isMobile ? iconData.mobilePosition : iconData.position}
+            mobilePosition={iconData.mobilePosition}
+            delay={iconData.delay}
+            href={iconData.href}
+            tooltip={iconData.tooltip}
             mousePosition={mousePosition}
           />
         ))}
