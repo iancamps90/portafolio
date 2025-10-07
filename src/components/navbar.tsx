@@ -8,10 +8,12 @@ import { Menu, X, Sun, Moon, Code2, Download } from 'lucide-react'
 import { CVDownload } from '@/components/cv-download'
 
 const navigation = [
-  { name: 'Inicio', href: '/' },
-  { name: 'Proyectos', href: '/projects' },
-  { name: 'Sobre mí', href: '/about' },
-  { name: 'Contacto', href: '/contact' },
+  { name: 'Inicio', href: '/', icon: '🏠' },
+  { name: 'Servicios', href: '/services', icon: '⚙️' },
+  { name: 'Proyectos', href: '/projects', icon: '🧰' },
+  { name: 'Academia', href: '/formation', icon: '🎓' },
+  { name: 'Sobre mí', href: '/about', icon: '👤' },
+  { name: 'Contacto', href: '/contact', icon: '📞' },
 ]
 
 export function Navbar() {
@@ -51,32 +53,35 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <motion.div
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.5 }}
-              className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+              className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-r from-primary to-accent"
             >
-              <Code2 className="h-5 w-5 text-primary-foreground" />
+              <Code2 className="h-5 w-5 text-white" />
             </motion.div>
-            <span className="font-display text-xl font-semibold">Ian Camps</span>
+            <span className="font-display text-xl font-semibold gradient-text-purple">IANCAMPS.DEV</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
+          <div className="hidden md:flex md:items-center md:space-x-2">
             {navigation.map((item) => (
-              <Link
+              <motion.div
                 key={item.name}
-                href={item.href}
-                className="relative text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
-                {item.name}
-                <motion.div
-                  className="absolute -bottom-1 left-0 h-0.5 w-0 bg-primary"
-                  whileHover={{ width: '100%' }}
-                  transition={{ duration: 0.2 }}
-                />
-              </Link>
+                <Link
+                  href={item.href}
+                  className="relative group flex items-center justify-center w-12 h-12 rounded-lg text-muted-foreground transition-all duration-200 hover:text-foreground hover:bg-accent"
+                  title={item.name}
+                >
+                  <span className="text-xl">{item.icon}</span>
+                  <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/80 text-white px-2 py-1 rounded text-xs whitespace-nowrap">
+                    {item.name}
+                  </div>
+                </Link>
+              </motion.div>
             ))}
-            <CVDownload />
           </div>
 
           {/* Theme Toggle & Mobile Menu Button */}
@@ -160,9 +165,10 @@ export function Navbar() {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="block px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground rounded-lg"
+                    className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground rounded-lg"
                     onClick={() => setMobileMenuOpen(false)}
                   >
+                    <span className="text-lg">{item.icon}</span>
                     {item.name}
                   </Link>
                 ))}

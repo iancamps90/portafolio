@@ -32,25 +32,26 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 84% 4.9%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Paleta empresarial: fondo #0D0D0D, acentos morado (#8B5CF6) y azul (#60A5FA) */
+    --background: 0 0% 5%; /* #0D0D0D */
+    --foreground: 0 0% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 262 83% 58%; /* #8B5CF6 - Morado */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 213 94% 68%; /* #60A5FA - Azul */
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 94.1%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 262 83% 58%;
   }
 }
 
@@ -161,6 +162,33 @@
 
   .body-text {
     @apply text-base md:text-lg text-muted-foreground leading-relaxed;
+  }
+
+  /* Dashboard 3D Styles */
+  .dashboard-container {
+    @apply relative min-h-screen overflow-hidden;
+    background: linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 100%);
+  }
+
+  .floating-icon {
+    @apply absolute cursor-pointer transition-all duration-300 hover:scale-110;
+    filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.3));
+  }
+
+  .floating-icon:hover {
+    filter: drop-shadow(0 0 30px rgba(139, 92, 246, 0.6));
+  }
+
+  .logo-glow {
+    text-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+  }
+
+  .gradient-text-purple {
+    @apply bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-blue {
+    @apply bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent;
   }
 }
 

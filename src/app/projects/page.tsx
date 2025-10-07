@@ -1,10 +1,15 @@
+import { Metadata } from 'next'
 import { ProjectsGrid } from '@/components/projects-grid'
 import { ProjectsFilters } from '@/components/projects-filters'
 import { getAllTags, getProjects } from '@/lib/content'
 
-export const metadata = {
-  title: 'Proyectos',
-  description: 'Explora todos mis proyectos de desarrollo full-stack, frontend y backend.',
+export const metadata: Metadata = {
+  title: 'Proyectos - Portfolio de Desarrollo Web & Automatización',
+  description: 'Explora los proyectos de desarrollo web, automatización y análisis de datos realizados para empresas. Casos de éxito y soluciones tecnológicas implementadas.',
+  keywords: [
+    'proyectos desarrollo web', 'casos de éxito', 'automatización', 
+    'dashboards', 'aplicaciones web', 'portfolio empresarial'
+  ],
 }
 
 export default function ProjectsPage() {
@@ -16,15 +21,14 @@ export default function ProjectsPage() {
       <div className="container-custom section-padding">
         <div className="text-center mb-12">
           <h1 className="heading-1 mb-6">
-            Mis <span className="gradient-text">Proyectos</span>
+            Proyectos <span className="gradient-text-purple">Empresariales</span>
           </h1>
           <p className="body-large max-w-2xl mx-auto">
-            Una colección completa de mis proyectos de desarrollo, desde aplicaciones web 
-            hasta APIs y herramientas de productividad.
+            Casos de éxito y soluciones tecnológicas implementadas para empresas. 
+            Desde desarrollo web hasta automatización de procesos y análisis de datos.
           </p>
         </div>
 
-        <ProjectsFilters tags={tags} />
         <ProjectsGrid projects={projects} />
       </div>
     </div>

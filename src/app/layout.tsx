@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
-import { Navbar } from '@/components/navbar'
-import { Footer } from '@/components/footer'
+import { ConditionalLayout } from '@/components/conditional-layout'
 import { ScrollToTop } from '@/components/scroll-to-top'
 import { Toaster } from 'react-hot-toast'
 import '@/styles/globals.css'
@@ -15,18 +14,18 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Ian Camps - Desarrollador Full-Stack & Coordinador de Proyectos',
-    template: '%s | Ian Camps'
+    default: 'IanCamps.dev - Desarrollo Web & Automatización para Empresas',
+    template: '%s | IanCamps.dev'
   },
-  description: 'Desarrollador Full-Stack especializado en Django, React y Python. Coordinador de equipos con experiencia en metodologías ágiles, Power BI y análisis de datos. Portfolio profesional con proyectos reales.',
+  description: 'Servicios profesionales de desarrollo web, automatización de procesos y análisis de datos. Soluciones tecnológicas modernas para empresas que buscan eficiencia y crecimiento digital.',
   keywords: [
-    'Ian Camps', 'Desarrollador Full-Stack', 'Django', 'React', 'Python', 
-    'PostgreSQL', 'Power BI', 'Scrum', 'Metodologías ágiles', 'Coordinador proyectos',
-    'Desarrollo web', 'JavaScript', 'TypeScript', 'Portfolio', 'Programador'
+    'IanCamps.dev', 'Desarrollo web', 'Automatización', 'Análisis de datos', 
+    'React', 'Django', 'Python', 'Power BI', 'Zapier', 'Desarrollo full-stack',
+    'Servicios web', 'Consultoría tecnológica', 'Empresa desarrollo', 'Freelancer'
   ],
   authors: [{ name: 'Ian Camps', url: 'https://iancamps.dev' }],
   creator: 'Ian Camps',
-  publisher: 'Ian Camps',
+  publisher: 'IanCamps.dev',
   formatDetection: {
     email: false,
     address: false,
@@ -40,24 +39,24 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'es_ES',
     url: 'https://iancamps.dev',
-    title: 'Ian Camps - Desarrollador Full-Stack & Coordinador de Proyectos',
-    description: 'Desarrollador Full-Stack especializado en Django, React y Python. Coordinador de equipos con experiencia en metodologías ágiles y análisis de datos.',
-    siteName: 'Ian Camps Portfolio',
+    title: 'IanCamps.dev - Desarrollo Web & Automatización para Empresas',
+    description: 'Servicios profesionales de desarrollo web, automatización de procesos y análisis de datos para empresas modernas.',
+    siteName: 'IanCamps.dev',
     images: [
       {
-        url: '/img/ian-camps-og.jpg',
+        url: '/img/iancamps-og.jpg',
         width: 1200,
         height: 630,
-        alt: 'Ian Camps - Desarrollador Full-Stack',
+        alt: 'IanCamps.dev - Desarrollo Web & Automatización',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ian Camps - Desarrollador Full-Stack & Coordinador de Proyectos',
-    description: 'Desarrollador Full-Stack especializado en Django, React y Python. Coordinador de equipos con experiencia en metodologías ágiles.',
+    title: 'IanCamps.dev - Desarrollo Web & Automatización para Empresas',
+    description: 'Servicios profesionales de desarrollo web, automatización de procesos y análisis de datos para empresas modernas.',
     creator: '@iancamps90',
-    images: ['/img/ian-camps-og.jpg'],
+    images: ['/img/iancamps-og.jpg'],
   },
   robots: {
     index: true,
@@ -89,13 +88,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative flex min-h-screen flex-col">
-            <Navbar />
-            <main className="flex-1">
-              {children}
-            </main>
-            <Footer />
-          </div>
+          <ConditionalLayout>
+            {children}
+          </ConditionalLayout>
           <ScrollToTop />
           <Toaster
             position="top-right"
