@@ -94,12 +94,12 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
-        {/* Google Analytics - Updated */}
+        {/* Google Analytics - Optimized for performance */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-GJGF5PPX54"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -107,7 +107,8 @@ export default function RootLayout({
             gtag('config', 'G-GJGF5PPX54', {
               page_title: document.title,
               page_location: window.location.href,
-              send_page_view: true
+              send_page_view: true,
+              transport_type: 'beacon'
             });
           `}
         </Script>

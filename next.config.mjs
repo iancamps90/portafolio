@@ -12,6 +12,22 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   swcMinify: true,
+  // Optimize for modern browsers
+  transpilePackages: [],
+  // Reduce bundle size
+  webpack: (config, { dev, isServer }) => {
+    if (!dev && !isServer) {
+      config.optimization.splitChunks.cacheGroups = {
+        ...config.optimization.splitChunks.cacheGroups,
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      }
+    }
+    return config
+  },
   async headers() {
     return [
       {
