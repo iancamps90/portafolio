@@ -1,12 +1,12 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/certifications/page": "app/certifications/page.js",
   "/page": "app/page.js",
+  "/certifications/page": "app/certifications/page.js",
   "/robots.txt/route": "app/robots.txt/route.js",
   "/sitemap.xml/route": "app/sitemap.xml/route.js",
-  "/projects/page": "app/projects/page.js",
-  "/services/page": "app/services/page.js",
   "/formation/page": "app/formation/page.js",
+  "/contact/page": "app/contact/page.js",
   "/about/page": "app/about/page.js",
-  "/contact/page": "app/contact/page.js"
+  "/projects/page": "app/projects/page.js",
+  "/services/page": "app/services/page.js"
 }
