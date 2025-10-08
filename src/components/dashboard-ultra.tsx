@@ -83,7 +83,13 @@ const FloatingIcon = ({
         scale: 1.3,
         transition: { duration: 0.2 }
       }}
-      onClick={() => router.push(href)}
+      onClick={() => {
+        if (href.startsWith('http')) {
+          window.open(href, '_blank', 'noopener,noreferrer')
+        } else {
+          router.push(href)
+        }
+      }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       title={tooltip}
@@ -320,8 +326,8 @@ export const DashboardUltra = () => {
       position: { x: 85, y: 75 },
       mobilePosition: { x: 80, y: 80 },
       delay: 0.5,
-      href: '/formation',
-      tooltip: 'Academia'
+      href: 'https://academy.iancamps.dev/',
+      tooltip: 'Academy'
     },
     {
       icon: FaEnvelope,

@@ -11,7 +11,7 @@ const navigation = [
   { name: 'Inicio', href: '/', icon: '🏠' },
   { name: 'Servicios', href: '/services', icon: '⚙️' },
   { name: 'Proyectos', href: '/projects', icon: '🧰' },
-  { name: 'Academia', href: '/formation', icon: '🎓' },
+  { name: 'Academy', href: 'https://academy.iancamps.dev/', icon: '🎓' },
   { name: 'Sobre mí', href: '/about', icon: '👤' },
   { name: 'Contacto', href: '/contact', icon: '📞' },
 ]
@@ -70,16 +70,31 @@ export function Navbar() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link
-                  href={item.href}
-                  className="relative group flex items-center justify-center w-12 h-12 rounded-lg text-muted-foreground transition-all duration-200 hover:text-foreground hover:bg-accent"
-                  title={item.name}
-                >
-                  <span className="text-xl">{item.icon}</span>
-                  <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/80 text-white px-2 py-1 rounded text-xs whitespace-nowrap">
-                    {item.name}
-                  </div>
-                </Link>
+                {item.href.startsWith('http') ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative group flex items-center justify-center w-12 h-12 rounded-lg text-muted-foreground transition-all duration-200 hover:text-foreground hover:bg-accent"
+                    title={item.name}
+                  >
+                    <span className="text-xl">{item.icon}</span>
+                    <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/80 text-white px-2 py-1 rounded text-xs whitespace-nowrap">
+                      {item.name}
+                    </div>
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="relative group flex items-center justify-center w-12 h-12 rounded-lg text-muted-foreground transition-all duration-200 hover:text-foreground hover:bg-accent"
+                    title={item.name}
+                  >
+                    <span className="text-xl">{item.icon}</span>
+                    <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/80 text-white px-2 py-1 rounded text-xs whitespace-nowrap">
+                      {item.name}
+                    </div>
+                  </Link>
+                )}
               </motion.div>
             ))}
           </div>
@@ -162,15 +177,29 @@ export function Navbar() {
             >
               <div className="py-4 space-y-2">
                 {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground rounded-lg"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <span className="text-lg">{item.icon}</span>
-                    {item.name}
-                  </Link>
+                  item.href.startsWith('http') ? (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground rounded-lg"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <span className="text-lg">{item.icon}</span>
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground rounded-lg"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      <span className="text-lg">{item.icon}</span>
+                      {item.name}
+                    </Link>
+                  )
                 ))}
               </div>
             </motion.div>
