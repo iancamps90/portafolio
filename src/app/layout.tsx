@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import { ThemeProvider } from '@/components/theme-provider'
 import { ConditionalLayout } from '@/components/conditional-layout'
@@ -7,11 +6,7 @@ import { ScrollToTop } from '@/components/scroll-to-top'
 import { Toaster } from 'react-hot-toast'
 import '@/styles/globals.css'
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
+
 
 export const metadata: Metadata = {
   title: {
@@ -93,7 +88,7 @@ export default function RootLayout({
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="//www.google-analytics.com" />
       </head>
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className="font-inter">
         {/* Google Analytics - Optimized for performance */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-GJGF5PPX54"
