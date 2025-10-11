@@ -1,0 +1,14 @@
+﻿# Node / Next / caches
+node_modules
+.next
+npm-debug.log
+yarn-error.log
+.pnpm-store
+
+# evitar montar/usar tsconfig buildinfo que rompe BuildKit
+tsconfig.tsbuildinfo
+
+# configs de entorno y basura
+.env
+.env.*
+.DS_Store
