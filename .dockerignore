@@ -1,4 +1,4 @@
-﻿# Node / Next / caches
+# Node / Next / caches
 node_modules
 .next
 npm-debug.log

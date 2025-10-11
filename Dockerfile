@@ -5,8 +5,13 @@ WORKDIR /app
 # copiar package files
 COPY package*.json ./
 
-# intentar npm ci; si falla, fallback a npm install
-RUN (npm ci --no-audit --no-fund --unsafe-perm) || (npm install --no-audit --no-fund --unsafe-perm)
+# diagnóstico: listar y mostrar si el lockfile está presente
+RUN echo "=== LISTA DE ARCHIVOS EN /app ===" && ls -la
+RUN echo "=== EXISTE package-lock.json ? ===" && ( [ -f package-lock.json ] && echo "YES" || echo "NO" )
+RUN echo "=== CABEZA package-lock.json (si existe) ===" && ( [ -f package-lock.json ] && sed -n '1,20p' package-lock.json || true )
+
+# intentar npm ci; si falla, caer a npm install
+RUN (npm ci --no-audit --no-fund --unsafe-perm) || (echo "npm ci falló → intentando npm install" && npm install --no-audit --no-fund --unsafe-perm)
 
 # copiar el resto del proyecto
 COPY . .
