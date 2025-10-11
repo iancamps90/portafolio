@@ -1,22 +1,19 @@
-﻿# ---- build stage ----
+﻿
+# ---- build stage ----
 FROM node:18-bullseye AS builder
 WORKDIR /app
 
-# copiar package files
-COPY package*.json ./
-
-# diagnóstico: listar y mostrar si el lockfile está presente
-RUN echo "=== LISTA DE ARCHIVOS EN /app ===" && ls -la
-RUN echo "=== EXISTE package-lock.json ? ===" && ( [ -f package-lock.json ] && echo "YES" || echo "NO" )
-RUN echo "=== CABEZA package-lock.json (si existe) ===" && ( [ -f package-lock.json ] && sed -n '1,20p' package-lock.json || true )
-
-# intentar npm ci; si falla, caer a npm install
-RUN (npm ci --no-audit --no-fund --unsafe-perm) || (echo "npm ci falló → intentando npm install" && npm install --no-audit --no-fund --unsafe-perm)
-
-# copiar el resto del proyecto
+# Copiamos todo el proyecto primero (garantiza que package.json esté disponible)
 COPY . .
 
-# build
+# Diagnóstico breve (ver en logs si es necesario)
+RUN echo "=== ARCHIVOS EN /app ===" && ls -la /app || true
+RUN echo "=== package.json existe? ===" && ( [ -f package.json ] && echo "YES" || echo "NO" )
+
+# Intentar instalar con npm ci; si falla, fallback a npm install
+RUN (npm ci --no-audit --no-fund --unsafe-perm) || (echo "npm ci falló → intentando npm install" && npm install --no-audit --no-fund --unsafe-perm)
+
+# Build de producción
 ENV NODE_ENV=production
 RUN npm run build
 
