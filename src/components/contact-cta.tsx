@@ -1,12 +1,9 @@
 'use client'
 
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaWhatsapp, FaEnvelope, FaGithub, FaLinkedin, FaExternalLinkAlt } from 'react-icons/fa'
-import { ContactModalSimple } from './contact-modal-simple'
 
 export const ContactCTA = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
   const contactMethods = [
     {
       icon: FaWhatsapp,
@@ -97,23 +94,19 @@ export const ContactCTA = () => {
 
         {/* CTA adicional */}
         <div className="p-6 bg-muted/30 border-t border-border">
-          <motion.button
-            className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 px-6 rounded-xl font-medium hover:from-purple-700 hover:to-blue-700 transition-all duration-200 flex items-center justify-center gap-2"
+          <motion.a
+            href="https://n8n-production-588a.up.railway.app/form/534c2b5c-e82a-4389-957a-faeaa9a00192"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 px-6 rounded-xl font-medium hover:from-purple-700 hover:to-blue-700 transition-all duration-200 flex items-center justify-center gap-2"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            onClick={() => setIsModalOpen(true)}
           >
             <FaEnvelope className="w-4 h-4" />
             Solicita presupuesto
-          </motion.button>
+          </motion.a>
         </div>
       </motion.div>
-
-      {/* Modal */}
-      <ContactModalSimple 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-      />
     </motion.div>
   )
 }

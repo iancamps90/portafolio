@@ -3,7 +3,7 @@
 // Imports necesarios para el dashboard ultra interactivo
 import { useState, useEffect, useRef } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
-import { FaUser, FaCogs, FaProjectDiagram, FaEnvelope, FaGraduationCap } from 'react-icons/fa'
+import { FaUser, FaCogs, FaProjectDiagram, FaEnvelope, FaGraduationCap, FaRocket } from 'react-icons/fa'
 import { useRouter } from 'next/navigation'
 
 // Componente de icono flotante ultra interactivo
@@ -336,6 +336,14 @@ export const DashboardUltra = () => {
       delay: 0.6,
       href: '/contact',
       tooltip: 'Contacto'
+    },
+    {
+      icon: FaRocket,
+      position: { x: 20, y: 45 },
+      mobilePosition: { x: 25, y: 50 },
+      delay: 0.7,
+      href: 'https://n8n-production-588a.up.railway.app/form/534c2b5c-e82a-4389-957a-faeaa9a00192',
+      tooltip: 'Solicitar presupuesto'
     }
   ]
 
