@@ -1,5 +1,4 @@
-﻿# Ignorados típicos
-node_modules
+﻿node_modules
 .next
 npm-debug.log
 yarn-error.log

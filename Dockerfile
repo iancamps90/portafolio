@@ -5,8 +5,8 @@ WORKDIR /app
 # copiar package files
 COPY package*.json ./
 
-# si existe package-lock.json, preferimos npm ci, si no usar npm install
-RUN if [ -f package-lock.json ]; then npm ci --no-audit --no-fund --unsafe-perm; else npm install --no-audit --no-fund --unsafe-perm; fi
+# intentar npm ci; si falla, fallback a npm install
+RUN (npm ci --no-audit --no-fund --unsafe-perm) || (npm install --no-audit --no-fund --unsafe-perm)
 
 # copiar el resto del proyecto
 COPY . .
