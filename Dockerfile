@@ -2,13 +2,16 @@
 FROM node:18-bullseye AS builder
 WORKDIR /app
 
+# copiar package files
 COPY package*.json ./
 
-ENV NPM_CONFIG_PRODUCTION=false
-RUN npm ci --no-audit --no-fund --unsafe-perm
+# si existe package-lock.json, preferimos npm ci, si no usar npm install
+RUN if [ -f package-lock.json ]; then npm ci --no-audit --no-fund --unsafe-perm; else npm install --no-audit --no-fund --unsafe-perm; fi
 
+# copiar el resto del proyecto
 COPY . .
 
+# build
 ENV NODE_ENV=production
 RUN npm run build
 
