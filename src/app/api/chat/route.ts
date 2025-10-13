@@ -15,10 +15,17 @@ export async function POST(request: NextRequest) {
       }
     )
 
-    const data = await response.json()
-    
-    return NextResponse.json(data, {
-      status: 200,
+    // Intentar parsear JSON, si falla devolvemos texto plano
+    let payload: unknown
+    const text = await response.text()
+    try {
+      payload = JSON.parse(text)
+    } catch {
+      payload = { message: text }
+    }
+
+    return NextResponse.json(payload, {
+      status: response.ok ? response.status : 200,
       headers: {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Methods': 'POST, OPTIONS',

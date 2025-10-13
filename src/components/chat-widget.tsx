@@ -54,11 +54,22 @@ export const ChatWidget = () => {
         })
       })
 
-      const data = await response.json()
+      const text = await response.text()
+      let data: any
+      try {
+        data = JSON.parse(text)
+      } catch {
+        data = { message: text }
+      }
+
+      if (!response.ok) {
+        throw new Error(data?.error || 'Error en el servicio')
+      }
+
       return data.response || data.message || 'Gracias por tu mensaje. Te responderé pronto.'
     } catch (error) {
       console.error('Error al enviar mensaje:', error)
-      return 'Lo siento, hubo un error. Por favor, intenta de nuevo o contáctame directamente.'
+      return 'Ahora mismo no puedo responder. Prueba de nuevo en unos minutos o escríbeme a ian@iancamps.dev.'
     }
   }
 
