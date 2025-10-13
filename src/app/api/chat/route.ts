@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from 'next/server'
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
+    const { message, sessionId, timestamp } = body ?? {}
     
     const response = await fetch(
       'https://n8n-production-588a.up.railway.app/webhook/e67166f8-cc0a-42b3-a02b-c03662f2a6c1/chat',
@@ -11,20 +12,30 @@ export async function POST(request: NextRequest) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(body)
+        body: JSON.stringify({
+          chatInput: message,
+          sessionId,
+          timestamp: timestamp ?? new Date().toISOString(),
+          source: 'iancamps.dev',
+        })
       }
     )
 
     // Intentar parsear JSON, si falla devolvemos texto plano
-    let payload: unknown
+    let payload: any
     const text = await response.text()
     try {
       payload = JSON.parse(text)
     } catch {
-      payload = { message: text }
+      payload = { output: text }
     }
 
-    return NextResponse.json(payload, {
+    // Normalizamos a { message: string }
+    const normalized = {
+      message: payload?.output ?? payload?.message ?? text,
+    }
+
+    return NextResponse.json(normalized, {
       status: response.ok ? response.status : 200,
       headers: {
         'Access-Control-Allow-Origin': '*',

@@ -66,7 +66,7 @@ export const ChatWidget = () => {
         throw new Error(data?.error || 'Error en el servicio')
       }
 
-      return data.response || data.message || 'Gracias por tu mensaje. Te responderé pronto.'
+      return data.message || data.response || 'Gracias por tu mensaje. Te responderé pronto.'
     } catch (error) {
       console.error('Error al enviar mensaje:', error)
       return 'Ahora mismo no puedo responder. Prueba de nuevo en unos minutos o escríbeme a ian@iancamps.dev.'
