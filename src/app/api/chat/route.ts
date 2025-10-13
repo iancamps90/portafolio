@@ -5,7 +5,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     
     const response = await fetch(
-      'https://n8n-production-588a.up.railway.app/webhook/4c3c328d-19fa-4092-83f6-3fdf0f41f561/chat',
+      'https://n8n-production-588a.up.railway.app/webhook/e67166f8-cc0a-42b3-a02b-c03662f2a6c1/chat',
       {
         method: 'POST',
         headers: {
