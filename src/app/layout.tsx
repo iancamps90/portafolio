@@ -3,6 +3,7 @@ import Script from 'next/script'
 import { ThemeProvider } from '@/components/theme-provider'
 import { ConditionalLayout } from '@/components/conditional-layout'
 import { ScrollToTop } from '@/components/scroll-to-top'
+import { ChatWidget } from '@/components/chat-widget'
 import { Toaster } from 'react-hot-toast'
 import '@/styles/globals.css'
 
@@ -117,6 +118,7 @@ export default function RootLayout({
             {children}
           </ConditionalLayout>
           <ScrollToTop />
+          <ChatWidget />
           <Toaster
             position="top-right"
             toastOptions={{
