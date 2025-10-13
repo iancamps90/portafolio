@@ -42,7 +42,7 @@ export const ChatWidget = () => {
 
   const sendMessageToN8N = async (message: string) => {
     try {
-      const response = await fetch('https://n8n-production-588a.up.railway.app/webhook/4c3c328d-19fa-4092-83f6-3fdf0f41f561/chat', {
+      const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
