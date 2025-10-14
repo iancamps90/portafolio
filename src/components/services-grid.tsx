@@ -21,16 +21,16 @@ const services = [
   },
   {
     icon: FaRobot,
-    title: 'Automatización Digital',
-    description: 'Automatiza tareas repetitivas con Zapier, Make, n8n y Python. Conecta sistemas, reduce errores y aumenta la productividad de tu equipo.',
+    title: 'Automatización con IA y n8n',
+    description: 'Automatizaciones 24/7 con n8n, agentes IA, clasificación de correos, respuestas automáticas, agenda de reuniones y orquestación multi-app.',
     price: 'desde 250 €',
     features: [
-      'Integraciones con Zapier/Make/n8n',
-      'Scripts de automatización Python',
-      'Workflows personalizados',
-      'Conectores API y webhooks',
-      'Monitoreo y alertas automáticas',
-      'Documentación y capacitación'
+      'Agentes IA (Gemini/OpenAI) conectados a tu negocio',
+      'Clasificación y respuesta de correos',
+      'Agenda automática (Google Calendar)',
+      'Chatbots web y Telegram con memoria',
+      'Integraciones con APIs y webhooks',
+      'Monitorización y documentación'
     ],
     color: 'from-green-500 to-green-600'
   },

@@ -13,6 +13,35 @@
   },
   "projects": [
     {
+      "slug": "eltiempo",
+      "name": "El Tiempo",
+      "type": "Web App / Weather",
+      "stack": ["React", "Vite", "TypeScript", "Tailwind", "APIs"],
+      "value": "Radar, previsión y visualizaciones meteorológicas en tiempo real.",
+      "status": "completado",
+      "showcase_priority": 0,
+      "summary": "Aplicación meteorológica con radar, mapas y gráficos de previsión.",
+      "description": "App web para consultar el tiempo con mapas de radar, previsiones por horas y gráficos. Construida con React/Vite y Tailwind, desplegada en Vercel.",
+      "features": [
+        "Radar y mapas interactivos",
+        "Previsión por horas y 7 días",
+        "Gráficos y alertas",
+        "Diseño responsive"
+      ],
+      "challenges": [
+        "Integración con APIs meteorológicas",
+        "Optimización de rendimiento en mapas"
+      ],
+      "lessons": [
+        "Gestión eficiente de datos en tiempo real",
+        "Buenas prácticas en UI para dashboards"
+      ],
+      "repo": null,
+      "demo": "https://eltiempo.iancamps.dev/",
+      "images": [],
+      "tags": ["Frontend", "React", "Vite", "Weather", "APIs"]
+    },
+    {
       "slug": "cloud-firewall",
       "name": "CloudFirewall",
       "type": "Web App / Ciberseguridad",
