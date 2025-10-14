@@ -35,6 +35,20 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Bloquear scroll del body cuando el menú móvil está abierto
+  useEffect(() => {
+    if (!mounted) return
+    const original = document.body.style.overflow
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = original
+    }
+    return () => {
+      document.body.style.overflow = original
+    }
+  }, [mobileMenuOpen, mounted])
+
   if (!mounted) {
     return null
   }
@@ -139,6 +153,8 @@ export function Navbar() {
               className="md:hidden rounded-lg p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle mobile menu"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
             >
               <AnimatePresence mode="wait">
                 {mobileMenuOpen ? (
@@ -171,13 +187,32 @@ export function Navbar() {
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
+              id="mobile-menu"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="md:hidden border-t border-border/50"
+              className="md:hidden fixed inset-0 z-50"
             >
-              <div className="py-4 space-y-2">
+              {/* Backdrop */}
+              <div
+                className="absolute inset-0 bg-background/80 backdrop-blur-sm"
+                onClick={() => setMobileMenuOpen(false)}
+                aria-hidden
+              />
+              {/* Panel */}
+              <div className="relative ml-auto h-full w-11/12 max-w-sm bg-background border-l border-border/50 shadow-xl p-4 overflow-y-auto">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm text-muted-foreground">Menú</span>
+                  <button
+                    className="rounded-lg p-2 hover:bg-accent"
+                    onClick={() => setMobileMenuOpen(false)}
+                    aria-label="Close mobile menu"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                </div>
+                <div className="py-2 space-y-1">
                 {navigation.map((item) => (
                   item.href.startsWith('http') ? (
                     <a
@@ -185,20 +220,20 @@ export function Navbar() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground rounded-lg"
+                      className="flex items-center gap-3 px-4 py-3 text-base font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground rounded-lg"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      <span className="text-lg">{item.icon}</span>
+                      <span className="text-xl">{item.icon}</span>
                       {item.name}
                     </a>
                   ) : (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="flex items-center gap-3 px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground rounded-lg"
+                      className="flex items-center gap-3 px-4 py-3 text-base font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground rounded-lg"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      <span className="text-lg">{item.icon}</span>
+                      <span className="text-xl">{item.icon}</span>
                       {item.name}
                     </Link>
                   )
