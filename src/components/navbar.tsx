@@ -12,6 +12,7 @@ const navigation = [
   { name: 'Servicios', href: '/services', icon: '⚙️' },
   { name: 'Proyectos', href: '/projects', icon: '🧰' },
   { name: 'El Tiempo', href: 'https://eltiempo.iancamps.dev/', icon: '⛅' },
+  { name: 'Dietas & Entrenos', href: 'https://iancamps90.github.io/planificador-dietas/', icon: '🏋️' },
   { name: 'Academy', href: 'https://academy.iancamps.dev/', icon: '🎓' },
   { name: 'Sobre mí', href: '/about', icon: '👤' },
   { name: 'Contacto', href: '/contact', icon: '📞' },

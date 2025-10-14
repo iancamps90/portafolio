@@ -3,7 +3,7 @@
 // Imports necesarios para el dashboard ultra interactivo
 import { useState, useEffect, useRef } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
-import { FaUser, FaCogs, FaProjectDiagram, FaEnvelope, FaGraduationCap, FaRocket, FaCloudSun } from 'react-icons/fa'
+import { FaUser, FaCogs, FaProjectDiagram, FaEnvelope, FaGraduationCap, FaRocket, FaCloudSun, FaDumbbell } from 'react-icons/fa'
 import { useRouter } from 'next/navigation'
 
 // Componente de icono flotante ultra interactivo
@@ -352,6 +352,14 @@ export const DashboardUltra = () => {
       delay: 0.8,
       href: 'https://eltiempo.iancamps.dev/',
       tooltip: 'El Tiempo'
+    },
+    {
+      icon: FaDumbbell,
+      position: { x: 35, y: 30 },
+      mobilePosition: { x: 35, y: 35 },
+      delay: 0.9,
+      href: 'https://iancamps90.github.io/planificador-dietas/',
+      tooltip: 'Dietas y Entrenos'
     }
   ]
 
