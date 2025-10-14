@@ -113,7 +113,7 @@
         "Técnicas de visualización de datos con Chart.js"
       ],
       "repo": "https://github.com/iancamps90/Planify",
-      "demo": null,
+      "demo": "https://planify.iancamps.dev",
       "images": [
         "/img/planify.png",
         "/img/tareas.png"
