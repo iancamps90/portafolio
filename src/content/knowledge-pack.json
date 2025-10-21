@@ -42,7 +42,9 @@
       ],
       "repo": "https://github.com/iancamps90/shanghai-advent-calendar",
       "demo": "https://shanghai.iancamps.dev",
-      "images": [],
+      "images": [
+        "/img/shanghai.png"
+      ],
       "tags": ["Python", "Reflex", "Frontend", "Calendar", "Interactive"]
     },
     {
@@ -69,9 +71,11 @@
         "Gestión eficiente de datos en tiempo real",
         "Buenas prácticas en UI para dashboards"
       ],
-      "repo": null,
+      "repo": "https://github.com/iancamps90/eltiempo",
       "demo": "https://eltiempo.iancamps.dev/",
-      "images": [],
+      "images": [
+        "/img/eltiempo.png"
+      ],
       "tags": ["Frontend", "React", "Vite", "Weather", "APIs"]
     },
     {
@@ -283,7 +287,9 @@
       ],
       "repo": "https://github.com/iancamps90/finance-app",
       "demo": "https://finanzas.iancamps.dev",
-      "images": [],
+      "images": [
+        "/img/finanzas.png"
+      ],
       "tags": ["Full-Stack", "TypeScript", "Finance", "Charts", "PostgreSQL"]
     },
     {
@@ -316,7 +322,9 @@
       ],
       "repo": "https://github.com/iancamps90/ecommerce",
       "demo": "https://ecommerce.iancamps.dev",
-      "images": [],
+      "images": [
+        "/img/ecommerce.png"
+      ],
       "tags": ["Full-Stack", "E-Commerce", "Payments", "React", "Django"]
     },
     {
