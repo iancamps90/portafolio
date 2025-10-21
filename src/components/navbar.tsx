@@ -4,8 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Sun, Moon, Code2, Download } from 'lucide-react'
-import { CVDownload } from '@/components/cv-download'
+import { Menu, X, Sun, Moon, Code2 } from 'lucide-react'
 
 const navigation = [
   { name: 'Inicio', href: '/', icon: '🏠' },
@@ -194,25 +193,25 @@ export function Navbar() {
               transition={{ duration: 0.2 }}
               className="md:hidden fixed inset-0 z-50"
             >
-              {/* Backdrop */}
-              <div
-                className="absolute inset-0 bg-background/80 backdrop-blur-sm"
-                onClick={() => setMobileMenuOpen(false)}
-                aria-hidden
-              />
-              {/* Panel */}
-              <div className="relative ml-auto h-full w-11/12 max-w-sm bg-background border-l border-border/50 shadow-xl p-4 overflow-y-auto">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-muted-foreground">Menú</span>
-                  <button
-                    className="rounded-lg p-2 hover:bg-accent"
-                    onClick={() => setMobileMenuOpen(false)}
-                    aria-label="Close mobile menu"
-                  >
-                    <X className="h-5 w-5" />
-                  </button>
-                </div>
-                <div className="py-2 space-y-1">
+            {/* Backdrop */}
+            <div
+              className="absolute inset-0 bg-background/80 backdrop-blur-sm"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-hidden
+            />
+            {/* Panel */}
+            <div className="relative ml-auto h-full w-11/12 max-w-sm bg-background border-l border-border/50 shadow-xl p-4 overflow-y-auto">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm text-muted-foreground">Menú</span>
+                <button
+                  className="rounded-lg p-2 hover:bg-accent"
+                  onClick={() => setMobileMenuOpen(false)}
+                  aria-label="Close mobile menu"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+              <div className="py-2 space-y-1">
                 {navigation.map((item) => (
                   item.href.startsWith('http') ? (
                     <a
@@ -239,8 +238,9 @@ export function Navbar() {
                   )
                 ))}
               </div>
-            </motion.div>
-          )}
+            </div>
+          </motion.div>
+        )}
         </AnimatePresence>
       </nav>
     </motion.header>
