@@ -13,13 +13,46 @@
   },
   "projects": [
     {
+      "slug": "shanghai-advent-calendar",
+      "name": "Shanghai Advent Calendar",
+      "type": "Web App / Calendario de Adviento",
+      "stack": ["Python", "Reflex", "NES.css", "Vercel"],
+      "value": "Calendario de adviento personalizado para viaje a Shanghai con sorpresas diarias y countdown.",
+      "status": "completado",
+      "showcase_priority": 0,
+      "summary": "Calendario de adviento interactivo para preparar el viaje a Shanghai con contenido diario y efectos visuales.",
+      "description": "Un calendario de adviento personalizado desarrollado en Python con Reflex para nuestro viaje a Shanghai (25 dic 2025 - 3 ene 2026). Cada día del 1 al 25 de diciembre revela una nueva sorpresa, recomendación o contenido especial para preparar la aventura más épica del año.",
+      "features": [
+        "25 días de sorpresas desbloqueables",
+        "Sistema de desbloqueo por fechas",
+        "Contenido rico (videos, fotos, recomendaciones)",
+        "Countdown timer hasta Shanghai",
+        "Diseño temático chino (rojo, dorado, negro)",
+        "Efectos visuales (nieve animada)"
+      ],
+      "challenges": [
+        "Desarrollo frontend con Python/Reflex",
+        "Sistema de desbloqueo por fechas",
+        "Optimización de efectos visuales"
+      ],
+      "lessons": [
+        "Desarrollo web con Python puro (Reflex)",
+        "Implementación de calendarios interactivos",
+        "Diseño temático y efectos visuales"
+      ],
+      "repo": "https://github.com/iancamps90/shanghai-advent-calendar",
+      "demo": "https://shanghai.iancamps.dev",
+      "images": [],
+      "tags": ["Python", "Reflex", "Frontend", "Calendar", "Interactive"]
+    },
+    {
       "slug": "eltiempo",
       "name": "El Tiempo",
       "type": "Web App / Weather",
       "stack": ["React", "Vite", "TypeScript", "Tailwind", "APIs"],
       "value": "Radar, previsión y visualizaciones meteorológicas en tiempo real.",
       "status": "completado",
-      "showcase_priority": 0,
+      "showcase_priority": 1,
       "summary": "Aplicación meteorológica con radar, mapas y gráficos de previsión.",
       "description": "App web para consultar el tiempo con mapas de radar, previsiones por horas y gráficos. Construida con React/Vite y Tailwind, desplegada en Vercel.",
       "features": [
@@ -48,7 +81,7 @@
       "stack": ["Django", "React", "Docker", "PostgreSQL", "GitHub Actions"],
       "value": "Firewall en la nube tipo Cloudflare con dashboard avanzado.",
       "status": "en desarrollo",
-      "showcase_priority": 1,
+      "showcase_priority": 2,
       "summary": "Sistema de firewall en la nube con dashboard avanzado para monitoreo y gestión de seguridad en tiempo real.",
       "description": "CloudFirewall es una solución completa de ciberseguridad que proporciona protección a nivel de red con un dashboard intuitivo para administradores. El sistema incluye detección de amenazas, filtrado de tráfico y análisis de patrones de ataque.",
       "features": [
@@ -84,7 +117,7 @@
       "stack": ["React", "Node.js", "Tailwind", "QR", "Genially"],
       "value": "Recorrido educativo con QR que desbloquea actividades interactivas.",
       "status": "completado",
-      "showcase_priority": 2,
+      "showcase_priority": 3,
       "summary": "Aplicación educativa interactiva que utiliza códigos QR para crear un recorrido inmersivo por la prehistoria.",
       "description": "Una experiencia educativa innovadora que combina tecnología QR con contenido interactivo para crear un recorrido virtual por la prehistoria. Los usuarios escanean códigos QR en diferentes puntos para desbloquear actividades, videos y contenido educativo.",
       "features": [
@@ -120,7 +153,7 @@
       "stack": ["Django", "Bootstrap", "Figma"],
       "value": "Organización personal: calendario, hábitos, finanzas, pomodoro, notas y tareas compartidas.",
       "status": "completado",
-      "showcase_priority": 3,
+      "showcase_priority": 4,
       "summary": "Aplicación integral de productividad que combina calendario, gestión de hábitos, finanzas personales y técnicas de productividad.",
       "description": "Planify es una macroagenda digital desarrollada como Trabajo de Fin de Grado que integra múltiples herramientas de productividad en una sola plataforma. Incluye calendario inteligente, seguimiento de hábitos, gestión financiera personal, técnica Pomodoro y sistema de tareas colaborativas.",
       "features": [
@@ -156,7 +189,7 @@
       "stack": ["React", "Vite", "JavaScript", "CSS", "OpenFoodFacts API"],
       "value": "App para calcular calorías y crear planes nutricionales personalizados con gráficos de macronutrientes.",
       "status": "completado",
-      "showcase_priority": 4,
+      "showcase_priority": 5,
       "summary": "Aplicación para cálculo de calorías y creación de planes nutricionales personalizados.",
       "description": "Una aplicación web que ayuda a los usuarios a calcular sus necesidades calóricas diarias y crear planes nutricionales personalizados. Integra con APIs externas para obtener información nutricional de alimentos y proporciona recomendaciones basadas en objetivos de fitness.",
       "features": [
@@ -192,7 +225,7 @@
       "stack": ["Express", "TypeScript", "PostgreSQL"],
       "value": "API para gestionar y consultar datos de Pokémon.",
       "status": "completado",
-      "showcase_priority": 5,
+      "showcase_priority": 6,
       "summary": "API REST completa para gestión y consulta de datos de Pokémon con base de datos PostgreSQL.",
       "description": "Una API REST desarrollada con Express y TypeScript que proporciona endpoints para gestionar y consultar información completa de Pokémon. Incluye funcionalidades de CRUD, búsqueda avanzada, filtros y paginación.",
       "features": [
@@ -226,8 +259,8 @@
       "type": "Web App",
       "stack": ["Express", "TypeScript", "PostgreSQL", "Gráficos"],
       "value": "Gestión de finanzas personales con visualizaciones interactivas.",
-      "status": "por hacer",
-      "showcase_priority": 6,
+      "status": "completado",
+      "showcase_priority": 7,
       "summary": "Aplicación para gestión de finanzas personales con visualizaciones interactivas y análisis de gastos.",
       "description": "Una aplicación web completa para la gestión de finanzas personales que permite a los usuarios registrar ingresos y gastos, crear presupuestos, y visualizar su situación financiera a través de gráficos interactivos y reportes detallados.",
       "features": [
@@ -249,7 +282,7 @@
         "Implementación de algoritmos de machine learning para categorización"
       ],
       "repo": "https://github.com/iancamps90/finance-app",
-      "demo": null,
+      "demo": "https://finanzas.iancamps.dev",
       "images": [],
       "tags": ["Full-Stack", "TypeScript", "Finance", "Charts", "PostgreSQL"]
     },
@@ -259,8 +292,8 @@
       "type": "Web App",
       "stack": ["React", "Express/Django", "Stripe/PayPal"],
       "value": "Tienda online con carrito, checkout y pago seguro.",
-      "status": "por hacer",
-      "showcase_priority": 7,
+      "status": "completado",
+      "showcase_priority": 8,
       "summary": "Plataforma de e-commerce completa con carrito de compras, checkout y integración de pasarelas de pago.",
       "description": "Una plataforma de e-commerce moderna que incluye catálogo de productos, carrito de compras, sistema de checkout y integración con pasarelas de pago como Stripe y PayPal. Diseñada para ser escalable y segura.",
       "features": [
@@ -282,7 +315,7 @@
         "Técnicas de optimización de rendimiento"
       ],
       "repo": "https://github.com/iancamps90/ecommerce",
-      "demo": null,
+      "demo": "https://ecommerce.iancamps.dev",
       "images": [],
       "tags": ["Full-Stack", "E-Commerce", "Payments", "React", "Django"]
     },
@@ -293,7 +326,7 @@
       "stack": ["React", "TypeScript", "Netlify"],
       "value": "Portfolio interactivo para mostrar certificados profesionales con filtros y diseño moderno.",
       "status": "completado",
-      "showcase_priority": 8,
+      "showcase_priority": 9,
       "summary": "Aplicación interactiva para mostrar y gestionar certificados de OpenWebinars.",
       "description": "Una aplicación web desarrollada en React y TypeScript para mostrar de forma interactiva y atractiva los certificados obtenidos en OpenWebinars. Incluye filtros, búsqueda y visualización detallada de cada certificado.",
       "features": [

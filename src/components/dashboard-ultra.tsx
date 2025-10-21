@@ -3,7 +3,7 @@
 // Imports necesarios para el dashboard ultra interactivo
 import { useState, useEffect, useRef } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
-import { FaUser, FaCogs, FaProjectDiagram, FaEnvelope, FaGraduationCap, FaRocket, FaCloudSun, FaDumbbell } from 'react-icons/fa'
+import { FaUser, FaCogs, FaProjectDiagram, FaEnvelope, FaGraduationCap, FaRocket, FaCloudSun, FaDumbbell, FaCalendarAlt, FaDollarSign, FaShoppingCart } from 'react-icons/fa'
 import { useRouter } from 'next/navigation'
 
 // Componente de icono flotante ultra interactivo
@@ -360,6 +360,30 @@ export const DashboardUltra = () => {
       delay: 0.9,
       href: 'https://iancamps90.github.io/planificador-dietas/',
       tooltip: 'Dietas y Entrenos'
+    },
+    {
+      icon: FaCalendarAlt,
+      position: { x: 60, y: 15 },
+      mobilePosition: { x: 60, y: 20 },
+      delay: 1.0,
+      href: 'https://shanghai.iancamps.dev',
+      tooltip: 'Shanghai Advent'
+    },
+    {
+      icon: FaDollarSign,
+      position: { x: 25, y: 60 },
+      mobilePosition: { x: 25, y: 65 },
+      delay: 1.1,
+      href: 'https://finanzas.iancamps.dev',
+      tooltip: 'Finanzas'
+    },
+    {
+      icon: FaShoppingCart,
+      position: { x: 75, y: 60 },
+      mobilePosition: { x: 75, y: 65 },
+      delay: 1.2,
+      href: 'https://ecommerce.iancamps.dev',
+      tooltip: 'E-Commerce'
     }
   ]
 
